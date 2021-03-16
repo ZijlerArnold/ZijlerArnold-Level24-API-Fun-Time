@@ -68,9 +68,9 @@ header {
 }
 .button_search {
     height: 25%;
-    width: 5%;
+    width: 8%;
     text-align: center;
-    font-size: 130%;
+    font-size: 125%;
     font-weight: 900;
     font-family: fantasy;
     color: blueviolet;
@@ -78,7 +78,7 @@ header {
     border: 3px solid blue;
 }
 .button_search:hover {   
-    color: blueviolet;
+    color: white;
     background-color: blueviolet;
     border: 3px solid blue;
 }
@@ -98,10 +98,11 @@ header {
 }
 .main {
     z-index: 999;
+    height: 90%;
 }
 .first_look {
     display: flex;
-    margin-top: -25%;
+    margin-top: -36%;
     width: 100%;
     height: 100%;
     border: 5px solid cornsilk;
@@ -141,6 +142,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
     width: 30%;
     background-color: cornsilk;
     border: 2px solid black;
@@ -225,20 +227,22 @@ header {
     margin-left: auto;
     margin-right: auto;
     margin-top: 1%;
-    width: 15%;
     padding-top: 0.5%;
-    text-align: center;
+    padding-left: 1%;
+    padding-right: 1%;
     padding-bottom: 0.7%;
+    width: 15%; 
+    text-align: center;
     font-size: 100%;
     font-weight: 900;
     font-family: fantasy;
-    color: whitesmoke;
+    color: blueviolet;
     cursor: pointer;
-    background-color: blueviolet;
-    border: 4px solid cornsilk;
+    border-radius: 7%;
+    border: 3px solid blue;
 }
 .another_one_button:hover {
-    color: teal;
-    background-color: cyan;
+    color: white;
+    background-color: blueviolet;
 }
 

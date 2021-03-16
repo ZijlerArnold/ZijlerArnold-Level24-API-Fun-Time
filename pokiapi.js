@@ -1,6 +1,25 @@
-// Voorbeeld Pomekons Names:
-// igglybuff  politoed   nidoran-m   skiploom   kabutops 
+// The button for random Pokemons is not working correct.
+// You can get only once a Pokemon, you have to refresh everytime.
+// I couldn't fixed it, so i made a Searchbar.
+// You can find the names for testing in the Console.
 
+// Opmerkingen: ik ben vergeten om eerst mobiel first te werken.
+// Jammer dan, laat maar lekker gaan, ik moet verder, komt wel goed met de volgende opdracht :-)
+// Die JavaScript is mijn grootse uitdaging.
+// Volgende opdracht ga ik weer SASS gebruiken.
+
+// Ik weet dat dit veel korter kan, Ik herhaal een hele blockcode.
+// Komt ook wel goed de volgende keer :-)
+
+// ===I wanna have a list of all the Pokemon names in the console ===//
+const listPoKeMonNamesOnConsole = async () => {
+  const url = 'https://pokeapi.co/api/v2/pokemon/';
+  const getPoKemonNames = await fetch(url);
+  const pokeMonNames = await getPoKemonNames.json();
+  console.log(pokeMonNames);
+};
+listPoKeMonNamesOnConsole();
+// === End I wanna have a list of all the Pokemon names in the console ===//
 
 const mainTwo = document.querySelector('.main_two');
 const errortext = document.querySelector('.error_text').classList.add('hidden');
@@ -12,7 +31,6 @@ const poKeMonsDaTa = async (id) => {
   try {
     const respons = await fetch(baseUrl);
     const result = await respons.json();
-    console.log(result)
     return result;
   } catch (error) {
     return (error.status == '404')
@@ -21,9 +39,8 @@ const poKeMonsDaTa = async (id) => {
     }
 };
 poKeMonsDaTa(ranDomNum)
- //export { daTaPokemons }; 
+ //export { poKeMonsDaTa }; 
 //!!!!! ===== End API CONNECTION ===== !!!!!// 
-
 
 // ===== Click on the Blauwe Round Button ===== //
 const bleuRoundButton = document.querySelector('.bleu_round_button_image');
@@ -36,7 +53,6 @@ bleuRoundButton.addEventListener('click', e => {
   document.querySelector('.button_search').classList.add('show');
 });
 // ===== End click on the Blauwe Round Button ===== //
-
 
 // ===== Show Searched Input Pokemon ===== //
 const searchButton = document.querySelector('.button_search');
@@ -72,11 +88,9 @@ searchButton.addEventListener('click', (e) => {
 });
 // ===== End Show Searched Input Pokemon ===== //
 
-
 // ===== Show Random Pokemon ===== //
 const anotherPokemonButton = document.querySelector('.another_one_button');
 anotherPokemonButton.addEventListener('click', (e) => {
-  anotherPokemonButton.innerHTML = 'Another';
   let outPut = '';
   const mainTwo = document.querySelector('.main_two');
   const showMeAPoKeMon = async () => {
@@ -86,7 +100,6 @@ anotherPokemonButton.addEventListener('click', (e) => {
     let poKeMonWeight = poKeMon.weight;
     let poKeMonHeight = poKeMon.height;
     let poKeMonAbilities = poKeMon.abilities[1].ability.name;
-    let poKeMonAbilitiesUrl = poKeMon.abilities[1].ability.url;
     outPut = `
               <div class="card_pokemon_box">
                 <div class="card_pokemon">
